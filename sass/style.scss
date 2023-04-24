@@ -1,0 +1,344 @@
+@import 'reset.scss';
+
+body,
+html {
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(52, 58, 64);
+        color: white;
+        padding: 10px;
+
+        h2 {
+            letter-spacing: 3px;
+            a:visited {
+                color: white;
+            }
+        }
+
+        form {
+            position: relative;
+
+            .drop {
+                width: 100%;
+                z-index: 1;
+                list-style-type: none;
+                position: absolute;
+                background-color: white;
+                box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.3);
+                li {
+                    a {
+                        display: block;
+                        width: 100%;
+                        padding: 10px;
+                        border-bottom: 1px solid rgb(226, 220, 220);
+                        color: rgb(52,58,64);
+                    }&:hover {
+                        background-color: rgb(231, 224, 224);
+                        font-weight: 700;
+                        transition: 0.3s ease;
+                    }
+                }
+                
+            }
+
+            #search {
+                height: 40px;
+                padding-left: 5px;
+            }
+        }
+    }
+
+    #popularShows {
+        margin: 10px 0 50px 0;
+
+        h2 {
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .shows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 15px;
+            grid-row-gap: 15px;
+            margin-top: 15px;
+            width: 80%;
+            margin: auto;
+
+            .show {
+                text-align: center;
+                border-radius: 15px;
+                box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.3);
+                padding: 10px;
+
+                img {
+                    max-width: 250px;
+                    width: 100%;
+                    max-height: 300px;
+                    height: auto;
+                    margin: auto;
+                }&:hover {
+                    cursor: pointer;
+                    filter: hue-rotate(180deg) saturate(1);
+                    transition: 0.4s ease-out;
+                }
+            }
+        }
+    }
+
+    #aboutShow {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px auto 60px auto;
+
+        .divTitle {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .divSummary {
+            h2 {
+                margin-bottom: 10px;
+            }
+            width: 80%;
+            align-self: center;
+            text-align: justify;
+        }
+
+        .divImgSeasonCast {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 20px;
+            justify-items: center;
+            //width: 80%;
+            margin: auto;
+
+            .imgDiv {
+                img {
+                    margin: auto;
+                    width: 100%;
+                    max-width: 600px;
+                    max-height: 550px;
+                }
+            }
+
+            .divSeasonCast {
+                .divSeason {
+                    .seasonList {
+                        list-style-position: inside;
+                        margin: 10px 0 0 20px;
+                    }
+                }
+
+                .divCast {
+                    margin-top: 15px;
+                    .castList {
+                        list-style-position: inside;
+                        margin: 10px 0 0 20px;
+
+                        .char {
+                            color: rgb(52,58,64);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .akaCrew {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 80%;
+        margin: 20px auto;
+
+        .akas {
+            h2 {
+                margin-bottom: 10px;
+            }
+
+            .akasList {
+                list-style-position: inside;
+                margin: 10px 0 0 20px;
+
+                li {
+                    span {
+                        color: rgb(52,58,64);
+                    }
+                }
+            }
+        }
+
+        .crew {
+            @extend .akas;
+
+            .crewList {
+                @extend .akasList;
+            }
+        }
+    }
+
+    .episodes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .episodesList {
+            width: 35%;
+            max-height: 200px; 
+            overflow-y: scroll;
+            list-style-position: inside;
+        }
+    }
+
+    footer {
+        width: 100%;
+        margin-top: 10px;
+        background-color: rgb(52, 58, 64);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+
+        #name {
+            font-weight: bold;
+            color: red;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        #popularShows {
+            .shows {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        #aboutShow {
+            margin: 10px auto 20px auto;
+
+            .divTitle {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+    
+            .divSummary {
+                h2 {
+                    margin-bottom: 10px;
+                }
+                
+                align-self: center;
+                text-align: justify;
+            }
+    
+            .divImgSeasonCast {
+                width: 80%;
+                .imgDiv {
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        nav {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+
+            h2 {
+                text-align: center;
+            }
+            form {
+                #search {
+                    width: 100%;
+                }
+            }
+            
+        }
+
+        #popularShows {
+            .shows {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0px;
+                grid-row-gap: 20px;
+            }
+        }
+
+        #aboutShow {
+            .divTitle {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+    
+            .divSummary {
+                h2 {
+                    margin-bottom: 10px;
+                }
+                
+                align-self: center;
+                text-align: justify;
+            }
+    
+            .divImgSeasonCast {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr max-content;
+                grid-row-gap: 10px;
+            }
+        }
+
+
+        .akaCrew {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .episodes {
+            .episodesList {
+                align-self: center;
+                width: 80%;
+                max-height: 200px; 
+                overflow-x: scroll;
+                list-style-position: inside;
+                margin: 20px auto;
+            }
+        }
+    
+    }
+}
+

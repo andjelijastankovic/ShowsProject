@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+}
+
+.container nav h2 {
+  letter-spacing: 3px;
+}
+
+.container nav h2 a:visited {
+  color: white;
+}
+
+.container nav form {
+  position: relative;
+}
+
+.container nav form .drop {
+  width: 100%;
+  z-index: 1;
+  list-style-type: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container nav form .drop li a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #e2dcdc;
+  color: #343a40;
+}
+
+.container nav form .drop li:hover {
+  background-color: #e7e0e0;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.container nav form #search {
+  height: 40px;
+  padding-left: 5px;
+}
+
+.container #popularShows {
+  margin: 10px 0 50px 0;
+}
+
+.container #popularShows h2 {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.container #popularShows .shows {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  margin-top: 15px;
+  width: 80%;
+  margin: auto;
+}
+
+.container #popularShows .shows .show {
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.container #popularShows .shows .show img {
+  max-width: 250px;
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  margin: auto;
+}
+
+.container #popularShows .shows .show:hover {
+  cursor: pointer;
+  filter: hue-rotate(180deg) saturate(1);
+  transition: 0.4s ease-out;
+}
+
+.container #aboutShow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px auto 60px auto;
+}
+
+.container #aboutShow .divTitle {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.container #aboutShow .divSummary {
+  width: 80%;
+  align-self: center;
+  text-align: justify;
+}
+
+.container #aboutShow .divSummary h2 {
+  margin-bottom: 10px;
+}
+
+.container #aboutShow .divImgSeasonCast {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  justify-items: center;
+  margin: auto;
+}
+
+.container #aboutShow .divImgSeasonCast .imgDiv img {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  max-height: 550px;
+}
+
+.container #aboutShow .divImgSeasonCast .divSeasonCast .divSeason .seasonList {
+  list-style-position: inside;
+  margin: 10px 0 0 20px;
+}
+
+.container #aboutShow .divImgSeasonCast .divSeasonCast .divCast {
+  margin-top: 15px;
+}
+
+.container #aboutShow .divImgSeasonCast .divSeasonCast .divCast .castList {
+  list-style-position: inside;
+  margin: 10px 0 0 20px;
+}
+
+.container #aboutShow .divImgSeasonCast .divSeasonCast .divCast .castList .char {
+  color: #343a40;
+}
+
+.container .akaCrew {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.container .akaCrew .akas h2,
+.container .akaCrew .crew h2 {
+  margin-bottom: 10px;
+}
+
+.container .akaCrew .akas .akasList,
+.container .akaCrew .crew .akasList,
+.container .akaCrew .crew .crewList {
+  list-style-position: inside;
+  margin: 10px 0 0 20px;
+}
+
+.container .akaCrew .akas .akasList li span,
+.container .akaCrew .crew .akasList li span,
+.container .akaCrew .crew .crewList li span {
+  color: #343a40;
+}
+
+.container .episodes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .episodes h2 {
+  margin-bottom: 10px;
+}
+
+.container .episodes .episodesList {
+  width: 35%;
+  max-height: 200px;
+  overflow-y: scroll;
+  list-style-position: inside;
+}
+
+.container footer {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.container footer #name {
+  font-weight: bold;
+  color: red;
+}
+
+@media screen and (max-width: 1024px) {
+  .container #popularShows .shows {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container #aboutShow {
+    margin: 10px auto 20px auto;
+  }
+
+  .container #aboutShow .divTitle {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .container #aboutShow .divSummary {
+    align-self: center;
+    text-align: justify;
+  }
+
+  .container #aboutShow .divSummary h2 {
+    margin-bottom: 10px;
+  }
+
+  .container #aboutShow .divImgSeasonCast {
+    width: 80%;
+  }
+
+  .container #aboutShow .divImgSeasonCast .imgDiv img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .container nav h2 {
+    text-align: center;
+  }
+
+  .container nav form #search {
+    width: 100%;
+  }
+
+  .container #popularShows .shows {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+  }
+
+  .container #aboutShow .divTitle {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .container #aboutShow .divSummary {
+    align-self: center;
+    text-align: justify;
+  }
+
+  .container #aboutShow .divSummary h2 {
+    margin-bottom: 10px;
+  }
+
+  .container #aboutShow .divImgSeasonCast {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr max-content;
+    grid-row-gap: 10px;
+  }
+
+  .container .akaCrew {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container .episodes .episodesList {
+    align-self: center;
+    width: 80%;
+    max-height: 200px;
+    overflow-x: scroll;
+    list-style-position: inside;
+    margin: 20px auto;
+  }
+}
